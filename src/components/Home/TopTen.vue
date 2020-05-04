@@ -1,11 +1,12 @@
 <template>
     <div>
         <h3 class="title">Top 10</h3>
-        <div class="results table">
+        <SkeletonColumn v-if="!topTen" :data="topTen" />
+        <div v-else class="results table">
             <div class="media-card has-rank" :key="data.id" v-for="(data, index) in topTen">
                 <div class="rank circle"><span class="hash">#</span>{{ index + 1 }}</div>
                 <a :href="`/manga/${data.id}`" class="cover">
-                    <img :src="`${data.coverImage.large}`" class="image" alt="" />
+                    <img v-lazy="`${data.coverImage.large}`" class="image" alt="" />
                 </a>
                 <div class="content">
                     <div class="row title">
@@ -64,10 +65,14 @@
 </template>
 
 <script>
+import SkeletonColumn from "./../Skeleton/SkeletonColumn";
 export default {
     name: "TopTen",
     props: ["topTen"],
+    components: {
+        SkeletonColumn,
+    },
 };
 </script>
 
-<style scoped src="./../../assets/css/mediaCardTable.css"></style>
+<style scoped src="./../../assets/css/mediaCard/mediaCardColumn.css"></style>

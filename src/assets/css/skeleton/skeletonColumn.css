@@ -1,0 +1,101 @@
+.results {
+    display: grid;
+    justify-content: space-between;
+}
+.results.table {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+.media-card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgb(var(--color-background-100));
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 14px 30px rgba(var(--color-shadow-blue), 0.15), 0 4px 4px rgba(var(--color-shadow-blue), 0.05);
+    display: inline-grid;
+    grid-template-columns: 48px auto;
+    position: relative;
+    text-align: left;
+    min-height: 80px;
+}
+
+.media-card.has-rank {
+    margin-left: 80px;
+}
+
+.cover {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    background: rgb(var(--color-background-300));
+}
+
+.content {
+    padding: 8px 16px;
+    padding-right: 8px;
+    min-width: 0;
+    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(auto, calc(100% - 440px)) 130px 130px 150px;
+    grid-gap: 10px;
+}
+
+.row {
+    color: rgb(var(--color-gray-800));
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.row.title,
+.row.score {
+    display: inline-block;
+    height: 20px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(var(--color-background-300));
+    border-radius: 4px;
+}
+.row.title {
+    width: 200px;
+}
+.row.score {
+    width: 100px;
+}
+
+.cover::after,
+.row.title:after,
+.row.score::after {
+    content: "";
+    display: block;
+    height: 100%;
+    transform: translateX(0);
+    width: 200%;
+    background-image: -webkit-gradient(
+        90deg,
+        rgba(var(--color-gray-300), 0) 0,
+        rgba(var(--color-blue-700), 0.06) 40%,
+        rgba(var(--color-blue-700), 0.06) 60%,
+        rgba(var(--color-gray-300), 0)
+    );
+    background-image: linear-gradient(
+        90deg,
+        rgba(var(--color-gray-300), 0) 0,
+        rgba(var(--color-blue-700), 0.06) 40%,
+        rgba(var(--color-blue-700), 0.06) 60%,
+        rgba(var(--color-gray-300), 0)
+    );
+
+    -webkit-animation: loading-pulse-data 2s linear infinite;
+    animation: loading-pulse-data 2s linear infinite;
+}
+
+@keyframes loading-pulse-data {
+    0% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(50%);
+    }
+}

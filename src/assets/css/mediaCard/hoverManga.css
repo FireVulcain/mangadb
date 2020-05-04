@@ -1,0 +1,89 @@
+.hover-data {
+    background: rgb(var(--color-background-100));
+    border-radius: 6px;
+    box-shadow: 0 14px 30px rgba(var(--color-shadow-blue), 0.15), 0 4px 4px rgba(var(--color-shadow-blue), 0.05);
+    min-width: 290px;
+    opacity: 0;
+    padding: 24px;
+    pointer-events: none;
+    position: absolute;
+    top: 5px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    z-index: 10;
+}
+.hover-data.right {
+    margin-left: 18px;
+    left: 100%;
+}
+
+.media-card:hover .hover-data {
+    -webkit-animation: in-data 0.3s;
+    animation: in-data 0.3s;
+    opacity: 1;
+}
+
+.hover-data .header {
+    display: grid;
+    grid-template-columns: auto 60px;
+    font-weight: 600;
+    color: rgb(var(--color-gray-800));
+    font-size: 1.6rem;
+}
+.hover-data .score .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    font-size: 1.9rem;
+}
+.hover-data .score .percentage {
+    vertical-align: text-top;
+    display: inline-flex;
+    padding-left: 3px;
+}
+
+.hover-data .info {
+    color: rgb(var(--color-gray-700));
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+.hover-data .info .separator {
+    padding: 0 4px;
+}
+.hover-data .genres {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 22px;
+}
+.hover-data .genres .genre {
+    background: #3480ea;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 20px;
+    line-height: 2rem;
+    margin-right: 11px;
+    padding: 0 12px;
+    text-transform: lowercase;
+}
+@keyframes in-data {
+    0% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    60% {
+        opacity: 1;
+    }
+    to {
+        transform: none;
+    }
+}

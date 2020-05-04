@@ -30,7 +30,8 @@
 }
 
 .media-card {
-    animation: in-data-v-9fa74044 0.3s linear;
+    -webkit-animation: in-data 0.3s linear;
+    animation: in-data 0.3s linear;
     display: grid;
     grid-template-rows: -webkit-min-content auto;
     grid-template-rows: min-content auto;
@@ -55,11 +56,14 @@
     height: 100%;
     left: 0;
     object-fit: cover;
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     top: 0;
     transition: opacity 0.3s ease-in-out;
     width: 100%;
+}
+.image[lazy="loaded"] {
+    opacity: 1;
 }
 .media-card .title {
     color: rgb(var(--color-gray-700));
@@ -72,4 +76,17 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+@keyframes in-data {
+    0% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    60% {
+        opacity: 1;
+    }
+    to {
+        transform: none;
+    }
 }
