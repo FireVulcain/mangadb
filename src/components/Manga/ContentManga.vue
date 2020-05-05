@@ -1,26 +1,29 @@
 <template>
-  <div class="content container">
-    <SidebarManga :mangaInfo="mangaInfo" />
-  </div>
+    <div class="content container">
+        <SidebarManga :mangaInfo="mangaInfo" />
+        <Overview :mangaInfo="mangaInfo" />
+    </div>
 </template>
 
 <script>
 import SidebarManga from "./Sidebar/SidebarManga";
+import Overview from "./Overview";
 export default {
-  name: "ContentManga",
-  props: ["mangaInfo"],
-  components: {
-    SidebarManga
-  }
+    name: "ContentManga",
+    props: ["mangaInfo"],
+    components: {
+        SidebarManga,
+        Overview,
+    },
 };
 </script>
 
 <style scoped>
 .content {
-  display: grid;
-  grid-column-gap: 40px;
-  grid-template-columns: 208px auto;
-  margin-top: 30px;
-  position: relative;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-template-columns: 208px auto;
+    margin-top: 30px;
+    position: relative;
 }
 </style>

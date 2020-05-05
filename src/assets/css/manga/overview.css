@@ -1,0 +1,148 @@
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.overview > div {
+    margin-bottom: 30px;
+}
+
+.media-manga .content .grid-wrap {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.media-preview-card {
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    display: inline-grid;
+    grid-template-columns: 85px auto;
+    height: 115px;
+    max-height: 115px;
+}
+.cover {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px 0 0 3px;
+}
+.content {
+    background: rgb(var(--color-foreground));
+    border-radius: 0 3px 3px 0;
+    padding: 12px;
+    position: relative;
+}
+.info-header {
+    color: rgb(var(--color-blue));
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.title {
+    display: -webkit-box;
+    font-size: 1.4rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.info {
+    bottom: 12px;
+    color: rgb(var(--color-text-lighter));
+    font-size: 1.2rem;
+    left: 12px;
+    position: absolute;
+}
+
+.role-card {
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    height: 80px;
+    overflow: hidden;
+}
+.view-character {
+    grid-template-columns: 100%;
+    grid-template-areas: "character";
+}
+.role-card > div {
+    display: inline-grid;
+    grid-template-columns: 60px auto;
+    grid-template-areas: "image content";
+}
+
+.content {
+    font-size: 1.3rem;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.content .name {
+    display: block;
+    height: 48px;
+    line-height: 1.3;
+}
+
+.content .role {
+    color: rgb(var(--color-text-lighter));
+    font-size: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.view-staff {
+    grid-template-areas: "staff";
+    grid-template-columns: 100%;
+}
+
+.grid-section-wrap {
+    display: grid;
+    grid-auto-rows: -webkit-min-content;
+    grid-auto-rows: min-content;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-areas: "status .";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.video {
+    border-radius: 4px;
+    height: 230px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 130px);
+    grid-gap: 20px;
+    justify-content: space-between;
+}
+.recommendation-card {
+    max-width: 100%;
+    vertical-align: top;
+    width: 130px;
+}
+.recommendation-card .cover {
+    box-shadow: 0 4px 4px rgba(var(--color-shadow-blue), 0.05);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 180px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.2s ease-in-out;
+    width: 130px;
+}
+
+.recommendation-card .title {
+    -webkit-line-clamp: 2;
+    font-weight: 600;
+    font-size: 1.3rem;
+}

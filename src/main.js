@@ -1,9 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueLazyload from "vue-lazyload";
+import VueYouTubeEmbed from "vue-youtube-embed";
+
 import router from "./router/";
 
 Vue.use(VueLazyload);
+Vue.use(VueYouTubeEmbed);
 
 Vue.config.productionTip = false;
 
