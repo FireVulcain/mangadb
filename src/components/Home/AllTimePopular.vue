@@ -13,7 +13,7 @@
           :to="{ name: 'Manga', params: { id: data.id, name: data.title.userPreferred.replace(/ /g, '-') } }"
           class="cover"
         >
-          <img v-lazy="`${data.coverImage.extraLarge}`" class="image" alt />
+          <img v-lazy="data.coverImage.extraLarge" class="image" alt />
         </router-link>
         <router-link
           :to="{ name: 'Manga', params: { id: data.id, name: data.title.userPreferred.replace(/ /g, '-') } }"

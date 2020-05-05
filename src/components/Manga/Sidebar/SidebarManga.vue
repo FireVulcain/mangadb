@@ -26,7 +26,11 @@ export default {
       let imgHeight = document.querySelector(".header .cover").offsetHeight;
       let descriptionHeight = document.querySelector(".header .container")
         .offsetHeight;
-      return Math.abs(imgHeight - descriptionHeight + 20);
+
+      if (descriptionHeight < imgHeight) {
+        return Math.abs(imgHeight - descriptionHeight + 20);
+      }
+      return 0;
     }
   },
   computed: {

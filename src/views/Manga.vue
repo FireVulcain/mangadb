@@ -1,5 +1,6 @@
 <template>
     <div class="media media-manga">
+        <vue-headful v-if="mangaInfo" :title="`${generateTitle(mangaInfo.title)}`" />
         <HeaderManga v-if="mangaInfo" :mangaInfo="mangaInfo" />
         <ContentManga v-if="mangaInfo" :mangaInfo="mangaInfo" />
     </div>
@@ -40,6 +41,21 @@ export default {
                     return (this.mangaInfo = result.data.data.Media);
                 })
                 .catch((err) => console.log(err));
+        },
+        generateTitle(title) {
+            let finalTitle;
+
+            if (title.romaji !== title.english) {
+                if (title.english) {
+                    finalTitle = `${title.romaji} (${title.english}) • MangaDB`;
+                } else {
+                    finalTitle = `${title.romaji} • MangaDB`;
+                }
+            } else {
+                finalTitle = `${title.romaji} • MangaDB`;
+            }
+
+            return `${finalTitle}`;
         },
     },
     created() {
