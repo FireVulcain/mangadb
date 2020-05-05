@@ -18,7 +18,6 @@
 }
 
 .media-card {
-    animation: in-data-v-9fa74044 0.3s linear;
     display: grid;
     grid-template-rows: -webkit-min-content auto;
     grid-template-rows: min-content auto;

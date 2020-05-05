@@ -63,3 +63,42 @@ a {
 .landing-section {
     margin-bottom: 50px;
 }
+
+@keyframes in-data {
+    0% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    60% {
+        opacity: 1;
+    }
+    to {
+        transform: none;
+    }
+}
+
+.router-anim-enter-active {
+    animation: coming 1s;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+.router-anim-leave-active {
+    animation: going 0.1s;
+}
+
+@keyframes going {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes coming {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

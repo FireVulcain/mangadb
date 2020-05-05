@@ -1,0 +1,134 @@
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+/* ranking */
+.ranking {
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.rank-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    width: calc(100% - 20px);
+}
+.ranking .icon {
+    vertical-align: -0.1em;
+    width: 1em;
+    font-size: 0.75em;
+}
+.ranking.rated .icon {
+    color: rgb(var(--color-yellow));
+}
+.ranking.popular .icon {
+    color: rgb(var(--color-red));
+}
+
+/* data */
+.data {
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    padding: 18px;
+}
+
+.data-set {
+    padding-bottom: 14px;
+}
+.type {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-bottom: 2px;
+}
+.value {
+    color: rgb(var(--color-text-lighter));
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+/* tags */
+.tags {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tags .tag {
+    align-items: center;
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    display: flex;
+    font-size: 1.3rem;
+    padding: 8px 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.tags .tag .rank {
+    color: rgb(var(--color-text-lighter));
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+.tag.spoiler {
+    color: rgb(var(--color-red));
+}
+.spoiler-toggle {
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.2s;
+}
+
+/* external links */
+.external-link {
+    background: rgb(var(--color-blue));
+    border-radius: 3px;
+    color: rgb(var(--color-white));
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding: 7px;
+    text-align: center;
+}
+
+.Amazon,
+.Asian,
+.CONtv,
+.Crunchyroll,
+.Manga\.Club,
+.Sony,
+.Viewster,
+.VRV,
+.Web {
+    background: rgb(var(--color-orange));
+}
+
+.Animelab,
+.Funimation {
+    background: #c063ff;
+}
+
+.ComicWalker,
+.Hulu,
+.Midnight,
+.Naver,
+.Webtoons {
+    background: rgb(var(--color-green));
+}
+
+.Fakku,
+.Lezhin,
+.Madman,
+.Manga,
+.Netflix,
+.Toomics,
+.Viz,
+.Youtube {
+    background: rgb(var(--color-red));
+}

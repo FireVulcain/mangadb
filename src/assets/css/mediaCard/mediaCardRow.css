@@ -30,8 +30,6 @@
 }
 
 .media-card {
-    -webkit-animation: in-data 0.3s linear;
-    animation: in-data 0.3s linear;
     display: grid;
     grid-template-rows: -webkit-min-content auto;
     grid-template-rows: min-content auto;
@@ -76,17 +74,4 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-}
-
-@keyframes in-data {
-    0% {
-        opacity: 0;
-        transform: scale(0.92);
-    }
-    60% {
-        opacity: 1;
-    }
-    to {
-        transform: none;
-    }
 }
