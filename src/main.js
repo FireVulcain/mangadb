@@ -3,11 +3,16 @@ import App from "./App.vue";
 import VueLazyload from "vue-lazyload";
 import VueYouTubeEmbed from "vue-youtube-embed";
 import vueHeadful from "vue-headful";
+import ScrollLoader from "vue-scroll-loader";
+import VTooltip from "v-tooltip";
 
 import router from "./router/";
 
 Vue.use(VueLazyload);
 Vue.use(VueYouTubeEmbed);
+Vue.use(ScrollLoader);
+Vue.use(VTooltip);
+
 Vue.component("vue-headful", vueHeadful);
 
 Vue.config.productionTip = false;

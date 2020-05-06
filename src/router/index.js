@@ -17,6 +17,11 @@ const routes = [
         name: "Manga",
         component: () => import("../views/Manga"),
     },
+    {
+        path: "/manga/:id/:name/:data",
+        name: "MangaMore",
+        component: () => import("../views/Manga"),
+    },
 ];
 const router = new VueRouter({
     mode: "history",

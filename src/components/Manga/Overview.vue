@@ -11,12 +11,12 @@
           <router-link
             v-if="relation.node.type == 'MANGA'"
             :to="{
-                            name: 'Manga',
-                            params: {
-                                id: relation.node.id,
-                                name: relation.node.title.userPreferred.replace(/ /g, '-'),
-                            },
-                        }"
+                name: 'Manga',
+                params: {
+                    id: relation.node.id,
+                    name: relation.node.title.userPreferred.replace(/ /g, '-'),
+                },
+            }"
             class="cover"
             v-lazy:background-image="relation.node.coverImage.large"
           ></router-link>
@@ -28,12 +28,12 @@
             <router-link
               v-if="relation.node.type == 'MANGA'"
               :to="{
-                                name: 'Manga',
-                                params: {
-                                    id: relation.node.id,
-                                    name: relation.node.title.userPreferred.replace(/ /g, '-'),
-                                },
-                            }"
+                  name: 'Manga',
+                  params: {
+                      id: relation.node.id,
+                      name: relation.node.title.userPreferred.replace(/ /g, '-'),
+                  },
+              }"
               class="title"
             >{{ relation.node.title.userPreferred }}</router-link>
             <div v-else class="title">{{ relation.node.title.userPreferred }}</div>
@@ -96,23 +96,23 @@
         >
           <router-link
             :to="{
-                            name: 'Manga',
-                            params: {
-                                id: recommendation.mediaRecommendation.id,
-                                name: recommendation.mediaRecommendation.title.userPreferred.replace(/ /g, '-'),
-                            },
-                        }"
+                name: 'Manga',
+                params: {
+                    id: recommendation.mediaRecommendation.id,
+                    name: recommendation.mediaRecommendation.title.userPreferred.replace(/ /g, '-'),
+                },
+            }"
             class="cover"
             v-lazy:background-image="recommendation.mediaRecommendation.coverImage.large"
           ></router-link>
           <router-link
             :to="{
-                            name: 'Manga',
-                            params: {
-                                id: recommendation.mediaRecommendation.id,
-                                name: recommendation.mediaRecommendation.title.userPreferred.replace(/ /g, '-'),
-                            },
-                        }"
+                name: 'Manga',
+                params: {
+                    id: recommendation.mediaRecommendation.id,
+                    name: recommendation.mediaRecommendation.title.userPreferred.replace(/ /g, '-'),
+                },
+            }"
             class="title"
           >{{ recommendation.mediaRecommendation.title.userPreferred }}</router-link>
         </div>
@@ -128,4 +128,4 @@ export default {
 };
 </script>
 
-<style scoped src="./../../assets/css/manga/overview.css"></style>
+<style scoped src="./../../assets/css/manga/content.css"></style>

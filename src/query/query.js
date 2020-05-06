@@ -172,4 +172,79 @@ query media($id:Int, $type:MediaType, $isAdult:Boolean) {
     }
 }
 `;
-export { QUERY_MANGA, QUERY_HOME };
+
+const QUERY_CHARACTERS = `
+query media($id:Int, $page:Int, $perPage:Int) {
+    Media(id: $id) {
+        id characters(page: $page, perPage: $perPage, sort: [ROLE, ID]) {
+            pageInfo {
+                total perPage currentPage lastPage hasNextPage
+            }
+            edges {
+                id role voiceActors {
+                    id name {
+                        full
+                    }
+                    language image {
+                        large
+                    }
+                }
+                node {
+                    id name {
+                        full
+                    }
+                    image {
+                        large
+                    }
+                }
+            }
+        }
+    }
+}
+`;
+
+const QUERY_STAFF = `
+query media($id:Int, $page:Int) {
+    Media(id: $id) {
+        id staff(page: $page) {
+            pageInfo {
+                total perPage currentPage lastPage hasNextPage
+            }
+            edges {
+                id role node {
+                    id name {
+                        full
+                    }
+                    image {
+                        large
+                    }
+                }
+            }
+        }
+    }
+}
+`;
+
+const QUERY_REVIEW = `
+query media($id:Int, $page:Int) {
+    Media(id: $id) {
+        id title {
+            userPreferred
+        }
+        reviews(page:$page, sort:RATING_DESC) {
+            pageInfo {
+                total perPage currentPage lastPage hasNextPage
+            }
+            nodes {
+                id summary rating ratingAmount user {
+                    id name avatar {
+                        large
+                    }
+                }
+            }
+        }
+    }
+}
+`;
+
+export { QUERY_MANGA, QUERY_HOME, QUERY_CHARACTERS, QUERY_STAFF, QUERY_REVIEW };

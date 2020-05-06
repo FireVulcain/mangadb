@@ -20,15 +20,17 @@ h2 {
     width: calc(100% - 20px);
 }
 .ranking .icon {
-    vertical-align: -0.1em;
-    width: 1em;
+    vertical-align: middle;
+    width: 1.2em;
     font-size: 0.75em;
 }
 .ranking.rated .icon {
     color: rgb(var(--color-yellow));
+    fill: rgb(var(--color-yellow));
 }
 .ranking.popular .icon {
     color: rgb(var(--color-red));
+    fill: rgb(var(--color-red));
 }
 
 /* data */
@@ -95,6 +97,9 @@ h2 {
     margin-bottom: 10px;
     padding: 7px;
     text-align: center;
+}
+.external-link:hover {
+    color: rgb(var(--color-white)) !important;
 }
 
 .Amazon,

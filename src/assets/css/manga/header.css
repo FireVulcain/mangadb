@@ -97,6 +97,6 @@ h1 {
     padding: 15px;
     color: rgb(var(--color-text-lighter));
 }
-.nav .router-link-active {
+.nav .router-link-exact-active {
     color: rgb(var(--color-text));
 }
