@@ -17,7 +17,7 @@
 
 <script>
 import axios from "axios";
-import { QUERY_CHARACTERS } from "./../../query/query";
+import { QUERY_CHARACTERS } from "./../../../query/query";
 
 export default {
     name: "Characters",
@@ -54,4 +54,4 @@ export default {
 };
 </script>
 
-<style scoped src="./../../assets/css/manga/content.css"></style>
+<style scoped src="./../../../assets/css/manga/content.css"></style>

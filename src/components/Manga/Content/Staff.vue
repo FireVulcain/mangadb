@@ -17,7 +17,7 @@
 
 <script>
 import axios from "axios";
-import { QUERY_STAFF } from "./../../query/query";
+import { QUERY_STAFF } from "./../../../query/query";
 
 export default {
     name: "Staff",
@@ -54,4 +54,4 @@ export default {
 };
 </script>
 
-<style scoped src="./../../assets/css/manga/content.css"></style>
+<style scoped src="./../../../assets/css/manga/content.css"></style>

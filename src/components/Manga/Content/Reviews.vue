@@ -18,7 +18,7 @@
 
 <script>
 import axios from "axios";
-import { QUERY_REVIEW } from "./../../query/query";
+import { QUERY_REVIEW } from "./../../../query/query";
 import customIcon from "vue-icon/lib/vue-feather.esm";
 
 export default {
@@ -59,4 +59,4 @@ export default {
 };
 </script>
 
-<style scoped src="./../../assets/css/manga/content.css"></style>
+<style scoped src="./../../../assets/css/manga/content.css"></style>

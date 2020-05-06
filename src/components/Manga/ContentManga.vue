@@ -10,10 +10,10 @@
 
 <script>
 import SidebarManga from "./Sidebar/SidebarManga";
-import Overview from "./Overview";
-import Characters from "./Characters";
-import Staff from "./Staff";
-import Reviews from "./Reviews";
+import Overview from "./Content/Overview";
+import Characters from "./Content/Characters";
+import Staff from "./Content/Staff";
+import Reviews from "./Content/Reviews";
 
 export default {
     name: "ContentManga",
