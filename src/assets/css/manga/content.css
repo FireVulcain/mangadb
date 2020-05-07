@@ -221,3 +221,78 @@ h2 {
     display: inline-block;
     width: 1em;
 }
+
+/* media stats */
+
+.rankings-wrap .rankings {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.ranking {
+    background: rgb(var(--color-foreground));
+    border-radius: 3px;
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+}
+.ranking .icon {
+    vertical-align: middle;
+    width: 1.2em;
+    font-size: 0.75em;
+}
+.ranking.rated .icon {
+    color: rgb(var(--color-yellow));
+    fill: rgb(var(--color-yellow));
+}
+.ranking.popular .icon {
+    color: rgb(var(--color-red));
+    fill: rgb(var(--color-red));
+}
+.rank-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    width: calc(100% - 20px);
+}
+
+/* status distributions */
+
+.status-distribution {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.graph {
+    margin-bottom: 30px;
+}
+.status-distribution .content-wrap {
+    border-radius: 4px;
+    background: rgb(var(--color-foreground));
+    font-size: 1.4rem;
+}
+.status-distribution .statuses {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+.status-distribution .status {
+    text-align: center;
+}
+.status-distribution .name {
+    height: auto;
+    background: #673ab7;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 8px;
+    padding: 6px 15px;
+    text-transform: capitalize;
+}
+
+.status-distribution .label {
+    color: rgba(var(--color-text-light), 0.6);
+    font-size: 1.2rem;
+}

@@ -247,4 +247,32 @@ query media($id:Int, $page:Int) {
 }
 `;
 
-export { QUERY_MANGA, QUERY_HOME, QUERY_CHARACTERS, QUERY_STAFF, QUERY_REVIEW };
+const QUERY_STATS = `
+query($id:Int) {
+    Media(id: $id) {
+        id rankings {
+            id rank type format year season allTime context
+        }
+        trends(sort:ID_DESC) {
+            nodes {
+                averageScore date trending popularity
+            }
+        }
+        airingTrends:trends(releasing:true, sort:EPISODE_DESC) {
+            nodes {
+                averageScore inProgress episode
+            }
+        }
+        distribution:stats {
+            status:statusDistribution {
+                status amount
+            }
+            score:scoreDistribution {
+                score amount
+            }
+        }
+    }
+}
+`;
+
+export { QUERY_MANGA, QUERY_HOME, QUERY_CHARACTERS, QUERY_STAFF, QUERY_REVIEW, QUERY_STATS };
