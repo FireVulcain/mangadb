@@ -126,7 +126,7 @@
 .row .genres a {
     background: #3480ea;
     border-radius: 10px;
-    color: #fff;
+    color: rgb(var(--color-white));
     display: inline-block;
     font-size: 1.1rem;
     font-weight: 700;
@@ -135,6 +135,9 @@
     margin-right: 8px;
     padding: 0 10px;
     text-transform: lowercase;
+}
+.row .genres a:hover {
+    color: #fff !important;
 }
 .row .sub-row {
     color: rgb(var(--color-gray-600));

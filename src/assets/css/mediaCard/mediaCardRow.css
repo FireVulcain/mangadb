@@ -75,3 +75,38 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+
+.circle {
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(var(--color-white));
+    display: grid;
+    font-size: 1.3rem;
+    font-weight: 700;
+    height: 25px;
+    width: 25px;
+}
+.rank {
+    background: #3480ea;
+    color: rgb(var(--color-white));
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 900;
+    height: 38px;
+    left: -8px;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    top: -8px;
+    transition: color 0.2s, background 0.2s;
+    width: 38px;
+    z-index: 6;
+}
+
+.rank .hash {
+    font-size: 1.2rem;
+    padding-top: 2px;
+    opacity: 0.8;
+}

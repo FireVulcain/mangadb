@@ -1,10 +1,10 @@
 <template>
   <div>
     <h3 class="title">
-      <a href="/popular" class="link">
+      <router-link :to="{name: 'Popular'}" class="link">
         All Time Popular
         <div class="expand">View All</div>
-      </a>
+      </router-link>
     </h3>
     <SkeletonCards v-if="!allTimePopular" />
     <div v-else class="results">

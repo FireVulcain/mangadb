@@ -1,10 +1,10 @@
 <template>
   <div>
     <h3 class="title">
-      <a href="/manhwa" class="link">
+      <router-link :to="{name: 'Manhwa'}" class="link">
         Popular Manhwa
         <div class="expand">View All</div>
-      </a>
+      </router-link>
     </h3>
     <SkeletonCards v-if="!popularManhwa" />
     <div v-else class="results">

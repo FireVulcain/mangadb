@@ -286,7 +286,7 @@ h2 {
     height: auto;
     background: #673ab7;
     border-radius: 4px;
-    color: #fff;
+    color: rgb(var(--color-white));
     margin-bottom: 8px;
     padding: 6px 15px;
     text-transform: capitalize;

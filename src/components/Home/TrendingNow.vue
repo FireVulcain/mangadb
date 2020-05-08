@@ -1,10 +1,10 @@
 <template>
   <div>
     <h3 class="title">
-      <a href="/trending" class="link">
+      <router-link :to="{name: 'Trending'}" class="link">
         Trending Now
         <div class="expand">View All</div>
-      </a>
+      </router-link>
     </h3>
     <SkeletonCards v-if="!trendingNow" />
     <div v-else class="results">

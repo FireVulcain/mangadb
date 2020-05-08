@@ -4,9 +4,9 @@
       <div v-if="data.endDate.year">{{ data.startDate.year }} - {{ data.endDate.year }}</div>
       <div v-else>Publishing since {{ data.startDate.year }}</div>
       <div class="score" v-if="data.averageScore">
-        <custom-icon v-if="data.averageScore > 75" name="smile" color="rgb(var(--color-green))" />
+        <custom-icon v-if="data.averageScore >= 75" name="smile" color="rgb(var(--color-green))" />
         <custom-icon
-          v-else-if="data.averageScore <= 75 && data.averageScore >= 55"
+          v-else-if="data.averageScore < 75 && data.averageScore >= 55"
           name="meh"
           color="rgb(var(--color-orange))"
         />
