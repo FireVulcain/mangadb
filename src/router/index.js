@@ -37,6 +37,11 @@ const routes = [
         name: "MangaMore",
         component: () => import("../views/Manga"),
     },
+    {
+        path: "/search/manga",
+        name: "SearchPage",
+        component: () => import("../views/Search"),
+    },
 ];
 const router = new VueRouter({
     mode: "history",

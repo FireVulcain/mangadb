@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1 class="alias-title">Trending manga</h1>
+    <Search />
     <div v-if="trendingNow" class="results">
       <div class="media-card" :key="data.id" v-for="data in trendingNow">
         <router-link
@@ -24,6 +25,7 @@
 import axios from "axios";
 import { QUERY_SORT } from "./../query/query";
 import HoverManga from "./../components/Home/HoverManga";
+import Search from "./../components/Search/Search";
 export default {
   name: "Trending",
   data() {
@@ -34,7 +36,8 @@ export default {
     };
   },
   components: {
-    HoverManga
+    HoverManga,
+    Search
   },
   methods: {
     fetchTrending() {

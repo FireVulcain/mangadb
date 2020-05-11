@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1 class="alias-title">Top manhwa</h1>
+    <Search />
     <div v-if="popularManhwa" class="results">
       <div class="media-card" :key="data.id" v-for="(data, index) in popularManhwa">
         <div class="rank circle">
@@ -28,6 +29,7 @@
 import axios from "axios";
 import { QUERY_SORT } from "./../query/query";
 import HoverManga from "./../components/Home/HoverManga";
+import Search from "./../components/Search/Search";
 export default {
   name: "Manhwa",
   data() {
@@ -38,7 +40,8 @@ export default {
     };
   },
   components: {
-    HoverManga
+    HoverManga,
+    Search
   },
   methods: {
     fetchManhwa() {

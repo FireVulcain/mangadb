@@ -110,3 +110,13 @@
     padding-top: 2px;
     opacity: 0.8;
 }
+
+.alias-title {
+    font-size: 2.8rem;
+    color: rgb(var(--color-gray-800));
+    font-weight: 800;
+    margin-bottom: -45px;
+    margin-top: 35px;
+    padding-bottom: 30px;
+    text-transform: capitalize;
+}
