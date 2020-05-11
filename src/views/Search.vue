@@ -3,7 +3,7 @@
     <vue-headful :title="'Search Manga • MangaDB'" />
     <Search @globalQuery="globalQuery" :searchParam="globalSearch" />
     <div class="results">
-      <div class="media-card" :key="data.id" v-for="(data) in searchData">
+      <div class="media-card" :key="index" v-for="(data, index) in searchData">
         <router-link
           :to="{ name: 'Manga', params: { id: data.id, name: data.title.userPreferred.replace(/ /g, '-') } }"
           class="cover"
@@ -17,6 +17,7 @@
         <HoverManga :data="data" />
       </div>
     </div>
+    <scroll-loader :loader-method="fetchData" :loader-disable="disable"></scroll-loader>
   </div>
 </template>
 
@@ -41,7 +42,9 @@ export default {
         countryOfOrigin: "",
         year: ""
       },
-      searchData: []
+      searchData: [],
+      page: 1,
+      disable: false
     };
   },
   components: {
@@ -49,13 +52,44 @@ export default {
     HoverManga
   },
   created() {
-    this.globalSearch = this.$route.query;
-    this.fetchData();
+    if (this.$route.query.genres) {
+      if (Array.isArray(this.$route.query.genres)) {
+        this.globalSearch.genres = this.$route.query.genres;
+      } else {
+        this.globalSearch.genres.push(this.$route.query.genres);
+      }
+    }
+    if (this.$route.query.format) {
+      if (Array.isArray(this.$route.query.format)) {
+        this.globalSearch.format = this.$route.query.format;
+      } else {
+        this.globalSearch.format.push(this.$route.query.format);
+      }
+    }
+    if (this.$route.query.tags) {
+      if (Array.isArray(this.$route.query.tags)) {
+        this.globalSearch.tags = this.$route.query.tags;
+      } else {
+        this.globalSearch.tags.push(this.$route.query.tags);
+      }
+    }
+    if (this.$route.query.search) {
+      this.globalSearch.search = this.$route.query.search;
+    }
+    if (this.$route.query.status) {
+      this.globalSearch.status = this.$route.query.status;
+    }
+    if (this.$route.query.year) {
+      this.globalSearch.year = this.$route.query.year;
+    }
+    if (this.$route.query.countryOfOrigin) {
+      this.globalSearch.countryOfOrigin = this.$route.query.countryOfOrigin;
+    }
   },
   methods: {
     fetchData() {
       let variables = {
-        page: 1,
+        page: this.page,
         type: "MANGA"
       };
       if (this.globalSearch.countryOfOrigin) {
@@ -91,14 +125,21 @@ export default {
         }
       })
         .then(result => {
-          this.searchData = result.data.data.Page.media;
-          return result;
+          this.searchData = [
+            ...this.searchData,
+            ...result.data.data.Page.media
+          ];
+          this.disable = this.page == result.data.data.Page.pageInfo.lastPage;
+          return this.page++;
         })
         .catch(err => console.log(err));
     },
     globalQuery(query) {
       this.globalSearch = query;
-      this.fetchData();
+      this.searchData = [];
+      this.disable = false;
+      this.page = 1;
+      // this.fetchData();
     }
   }
 };
