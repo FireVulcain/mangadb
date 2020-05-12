@@ -85,7 +85,18 @@
                 }"
               class="link"
             >Stats</router-link>
-            <a href class="link">Social</a>
+            <router-link
+              exact
+              :to="{
+                    name: 'MangaMore',
+                    params: {
+                        id: mangaInfo.id,
+                        name: mangaInfo.title.userPreferred.replace(/ /g, '-'),
+                        data: 'social',
+                    },
+                }"
+              class="link"
+            >Social</router-link>
           </div>
         </div>
       </div>

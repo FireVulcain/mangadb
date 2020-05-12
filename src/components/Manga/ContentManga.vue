@@ -6,6 +6,7 @@
     <Staff v-if="dataParm == 'staff'" />
     <Reviews v-if="dataParm == 'reviews'" />
     <Stats v-if="dataParm == 'stats'" />
+    <Social v-if="dataParm == 'social'" />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Characters from "./Content/Characters";
 import Staff from "./Content/Staff";
 import Reviews from "./Content/Reviews";
 import Stats from "./Content/Stats";
+import Social from "./Content/Social";
 
 export default {
   name: "ContentManga",
@@ -32,7 +34,8 @@ export default {
     Characters,
     Staff,
     Reviews,
-    Stats
+    Stats,
+    Social
   },
   created() {
     let params = this.$route.params.data;

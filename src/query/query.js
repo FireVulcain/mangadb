@@ -355,5 +355,66 @@ query($page:Int=1 $id:Int $type:MediaType $isAdult:Boolean=false $search:String 
         }
     }
 }`;
-
-export { QUERY_MANGA, QUERY_HOME, QUERY_CHARACTERS, QUERY_STAFF, QUERY_REVIEW, QUERY_STATS, QUERY_SORT, QUERY_GENRES, QUERY_SEARCH };
+const QUERY_THREADS = `
+query($id:Int, $page:Int, $perPage:Int) {
+    Page(page: $page, perPage: $perPage) {
+        pageInfo {
+            total perPage currentPage lastPage hasNextPage
+        }
+        threads(mediaCategoryId:$id, sort:ID_DESC) {
+            id title replyCount viewCount replyCommentId repliedAt createdAt categories {
+                id name
+            }
+            user {
+                id name avatar {
+                    large
+                }
+            }
+            replyUser {
+                id name avatar {
+                    large
+                }
+            }
+        }
+    }
+}
+`;
+const QUERY_ACTIVITY = `
+query($id:Int, $page:Int) {
+    Page(page: $page, perPage: 10) {
+        pageInfo {
+            total perPage currentPage lastPage hasNextPage
+        }
+        activities(mediaId:$id, sort:ID_DESC, type:MEDIA_LIST) {
+            ... on ListActivity {
+                id userId type status progress replyCount isLocked isSubscribed isLiked likeCount createdAt user {
+                    id name avatar {
+                        large
+                    }
+                }
+                media {
+                    id type bannerImage title {
+                        userPreferred
+                    }
+                    coverImage {
+                        large
+                    }
+                }
+            }
+        }
+    }
+}
+`;
+export {
+    QUERY_MANGA,
+    QUERY_HOME,
+    QUERY_CHARACTERS,
+    QUERY_STAFF,
+    QUERY_REVIEW,
+    QUERY_STATS,
+    QUERY_SORT,
+    QUERY_GENRES,
+    QUERY_SEARCH,
+    QUERY_THREADS,
+    QUERY_ACTIVITY,
+};

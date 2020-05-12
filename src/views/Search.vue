@@ -2,7 +2,8 @@
   <div class="container">
     <vue-headful :title="'Search Manga • MangaDB'" />
     <Search @globalQuery="globalQuery" :searchParam="globalSearch" />
-    <div class="results">
+    <div class="no-results" v-if="error">{{error}}</div>
+    <div class="results" v-else>
       <div class="media-card" :key="index" v-for="(data, index) in searchData">
         <router-link
           :to="{ name: 'Manga', params: { id: data.id, name: data.title.userPreferred.replace(/ /g, '-') } }"
@@ -44,7 +45,8 @@ export default {
       },
       searchData: [],
       page: 1,
-      disable: false
+      disable: false,
+      error: ""
     };
   },
   components: {
@@ -125,6 +127,10 @@ export default {
         }
       })
         .then(result => {
+          if (result.data.data.Page.media.length <= 0) {
+            this.disable = true;
+            return (this.error = "No results");
+          }
           this.searchData = [
             ...this.searchData,
             ...result.data.data.Page.media
@@ -139,7 +145,6 @@ export default {
       this.searchData = [];
       this.disable = false;
       this.page = 1;
-      // this.fetchData();
     }
   }
 };
