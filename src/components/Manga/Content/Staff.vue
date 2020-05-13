@@ -6,7 +6,7 @@
                     <div class="cover" v-lazy:background-image="staff.node.image.large"></div>
                     <div class="content">
                         <div class="name">{{ staff.node.name.full }}</div>
-                        <div class="role">{{ staff.role.toLowerCase() }}</div>
+                        <div class="role">{{ staff.role | capitalize }}</div>
                     </div>
                 </div>
             </div>
