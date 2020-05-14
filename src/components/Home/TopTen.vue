@@ -41,7 +41,7 @@
                             <div class="sub-row status">{{ data.status | capitalize }}</div>
                         </div>
                         <div v-else>
-                            Publishing since {{ data.startDate.year }}
+                            <span class="since">Publishing since</span> {{ data.startDate.year }}
                             <div class="sub-row status">{{ data.status | capitalize }}</div>
                         </div>
                     </div>

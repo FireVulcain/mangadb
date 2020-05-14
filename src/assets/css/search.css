@@ -14,11 +14,6 @@
     grid-gap: 24px;
     grid-template-columns: repeat(5, 170px);
 }
-@media (min-width: 1540px) {
-    .filters {
-        grid-template-columns: repeat(6, 180px);
-    }
-}
 
 .filter-select > .name {
     color: rgb(var(--color-gray-900));
@@ -188,4 +183,28 @@
 }
 .selected-icon svg {
     width: 1.5em;
+}
+
+@media (min-width: 1540px) {
+    .filters {
+        grid-template-columns: repeat(6, 180px);
+    }
+}
+@media (max-width: 1040px) {
+    .filters-wrap {
+        grid-template-columns: auto;
+    }
+    .filters {
+        overflow-x: auto;
+        white-space: nowrap;
+        grid-template-columns: repeat(6, auto);
+        scroll-snap-type: x mandatory;
+        margin-bottom: -560px;
+        padding-bottom: 600px;
+    }
+    .filters > .filter {
+        width: 190px;
+        scroll-snap-align: start;
+        padding-left: 20px;
+    }
 }

@@ -99,3 +99,29 @@
         transform: translateX(50%);
     }
 }
+/* responsive */
+@media (max-width: 767px) {
+    .media-card.has-rank {
+        margin-left: 0;
+    }
+}
+@media (max-width: 640px) {
+    .content {
+        grid-template-columns: 100px auto auto;
+    }
+    .row.format {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .row.date {
+        display: none;
+    }
+    .row.title,
+    .row.score {
+        width: auto;
+    }
+    .content {
+        grid-template-columns: minmax(150px, auto) auto;
+    }
+}

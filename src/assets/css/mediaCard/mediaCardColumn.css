@@ -167,3 +167,39 @@
         transform: none;
     }
 }
+/* responsive */
+@media (max-width: 900px) {
+    .title-wrap a {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+    }
+}
+@media (max-width: 767px) {
+    .media-card.has-rank {
+        margin-left: 0;
+    }
+}
+@media (max-width: 640px) {
+    .content {
+        grid-template-columns: 100px auto auto;
+    }
+    .row .sub-row,
+    .row.format {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .row .since {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .row.date {
+        display: none;
+    }
+    .content {
+        grid-template-columns: minmax(150px, auto) auto;
+    }
+}

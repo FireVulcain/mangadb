@@ -66,6 +66,12 @@ a:hover {
         padding-right: 100px;
     }
 }
+@media (max-width: 1040px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 
 .landing-section {
     margin-bottom: 50px;
