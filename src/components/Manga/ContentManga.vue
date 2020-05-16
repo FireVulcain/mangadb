@@ -89,4 +89,9 @@ export default {
   margin-top: 30px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .content {
+    display: block;
+  }
+}
 </style>

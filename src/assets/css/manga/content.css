@@ -13,6 +13,11 @@ h2 {
     grid-row-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
 }
+@media (max-width: 1040px) {
+    .media-manga .content .grid-wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 .media-manga .content .grid-wrap.grid-wrap-half {
     grid-template-columns: repeat(4, 1fr);
 }
@@ -110,9 +115,18 @@ h2 {
     grid-auto-rows: min-content;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
-    grid-template-areas: "status .";
+    grid-template-areas: "status";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+}
+@media (max-width: 1040px) {
+    .grid-section-wrap {
+        grid-column-gap: 0;
+        grid-template-columns: 1fr;
+    }
+    .grid-section-wrap * {
+        width: 100%;
+    }
 }
 .video {
     border-radius: 4px;

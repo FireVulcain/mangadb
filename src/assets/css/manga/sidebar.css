@@ -39,10 +39,27 @@ h2 {
     border-radius: 3px;
     padding: 18px;
 }
-
 .data-set {
     padding-bottom: 14px;
 }
+@media (max-width: 767px) {
+    .data {
+        display: flex;
+        margin-bottom: 25px;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .data-set {
+        padding-bottom: 0;
+        padding-right: 25px;
+    }
+    .data .value br {
+        display: none;
+    }
+}
+
 .type {
     font-size: 1.3rem;
     font-weight: 700;
@@ -136,4 +153,11 @@ h2 {
 .Viz,
 .Youtube {
     background: rgb(var(--color-red));
+}
+
+@media (max-width: 767px) {
+    .tags,
+    .external-links {
+        display: none;
+    }
 }
