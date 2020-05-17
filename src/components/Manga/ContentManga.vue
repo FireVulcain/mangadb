@@ -92,6 +92,7 @@ export default {
 @media (max-width: 767px) {
   .content {
     display: block;
+    padding-bottom: 30px;
   }
 }
 </style>

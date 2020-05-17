@@ -236,6 +236,15 @@ h2 {
     width: 1em;
 }
 
+@media (max-width: 767px) {
+    .review-wrap {
+        display: block;
+    }
+    .votes {
+        display: none;
+    }
+}
+
 /* media stats */
 
 .rankings-wrap .rankings {
@@ -271,7 +280,16 @@ h2 {
     text-transform: capitalize;
     width: calc(100% - 20px);
 }
-
+@media (max-width: 1040px) {
+    .rankings-wrap .rankings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767px) {
+    .rankings-wrap .rankings {
+        grid-template-columns: 1fr;
+    }
+}
 /* status distributions */
 
 .status-distribution {
@@ -309,6 +327,14 @@ h2 {
 .status-distribution .label {
     color: rgba(var(--color-text-light), 0.6);
     font-size: 1.2rem;
+}
+@media (max-width: 767px) {
+    .status-distribution .statuses {
+        display: block;
+    }
+    .status-distribution .status {
+        margin-bottom: 10px;
+    }
 }
 
 /* Social */
@@ -457,4 +483,21 @@ h2 {
     right: 12px;
     top: 12px;
     font-weight: 700;
+}
+
+@media (max-width: 1040px) {
+    .social {
+        grid-template-columns: 1fr;
+        grid-row-gap: 40px;
+    }
+}
+@media (max-width: 767px) {
+    .footer {
+        flex-wrap: wrap;
+    }
+    .categories {
+        margin-left: -10px;
+        margin-top: 12px;
+        width: 100%;
+    }
 }
